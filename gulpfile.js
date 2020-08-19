@@ -4,7 +4,7 @@ var nodemon = require('gulp-nodemon');
 var mocha = require('gulp-mocha');
 var eslint = require('gulp-eslint');
 var util = require('gulp-util');
-const {dumpError} = require('wriocommon').utils;
+//const {dumpError} = require('wriocommon').utils;
 
 function restart_nodemon () {
     if (nodemon_instance) {
@@ -25,7 +25,7 @@ gulp.task('test', function() {
             timeout: 60000,
         },grepStatement)))
         .once('error', function (err) {
-            dumpError(err);
+            //dumpError(err);
             process.exit(1);
         })
         .once('end', function () {
