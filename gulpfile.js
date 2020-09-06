@@ -3,7 +3,7 @@ var source = require('vinyl-source-stream');
 var nodemon = require('gulp-nodemon');
 var mocha = require('gulp-mocha');
 var eslint = require('gulp-eslint');
-var util = require('gulp-util');
+//var util = require('gulp-util');
 //const {dumpError} = require('wriocommon').utils;
 
 function restart_nodemon () {
@@ -16,22 +16,22 @@ function restart_nodemon () {
 
 }
 
-gulp.task('test', function() {
-    var grepStatement = util.env.grep ? {grep:util.env.grep} : {};
-    return gulp.src('test/**/*.js', {read: false})
+//gulp.task('test', function() {
+//    var grepStatement = util.env.grep ? {grep:util.env.grep} : {};
+//    return gulp.src('test/**/*.js', {read: false})
         // gulp-mocha needs filepaths so you can't have any plugins before it
-        .pipe(mocha(Object.assign({
-            reporter: 'dot',
-            timeout: 60000,
-        },grepStatement)))
-        .once('error', function (err) {
+//        .pipe(mocha(Object.assign({
+//            reporter: 'dot',
+//            timeout: 60000,
+//        },grepStatement)))
+//        .once('error', function (err) {
             //dumpError(err);
-            process.exit(1);
-        })
-        .once('end', function () {
-            process.exit();
-        });
-});
+//            process.exit(1);
+//        })
+//        .once('end', function () {
+//            process.exit();
+//        });
+//});
 
 gulp.task('lint', function () {
     // ESLint ignores files with "node_modules" paths.
